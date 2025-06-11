@@ -4,3 +4,7 @@ This repository contains a Chrome extension for rendering LaTeX on [NotebookLM](
 Inline math can be written using `$...$` or `\(...\)`, while block math uses `$$...$$` or `\[...\]`.
 
 The extension relies on the [KaTeX](https://katex.org/) runtime, which is **not included** in the repository. See [`notebooklm-latex-extension`](./notebooklm-latex-extension/) for instructions on downloading the KaTeX files and loading the extension.
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
