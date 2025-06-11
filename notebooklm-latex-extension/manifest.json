@@ -18,7 +18,8 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "fonts/*"
+        "fonts/*",
+        "fonts/woff-v2/*"
       ],
       "matches": [
         "https://notebooklm.google.com/*"
