@@ -13,3 +13,10 @@ The `notebooklm-latex-extension` directory already includes `katex.min.js`, `kat
 4. Navigate to NotebookLM and LaTeX expressions will render automatically.
 
 To update the bundled KaTeX files, optionally run `npm install` inside `notebooklm-latex-extension` and copy over the new `katex.min.js`, `katex.min.css`, and `fonts/` directory.
+
+The extension relies on the [KaTeX](https://katex.org/) runtime, which is **not included** in the repository. See [`notebooklm-latex-extension`](./notebooklm-latex-extension/) for instructions on downloading the KaTeX files and loading the extension.
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
+
