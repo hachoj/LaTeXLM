@@ -11,8 +11,10 @@ function getTextNodes(node) {
   return textNodes;
 }
 
-// Regex for inline LaTeX: $...$ or \( ... \)
-const latexRegex = /\$(.+?)\$|\\\((.+?)\\\)/g;
+// Regex for inline and block LaTeX:
+//  inline: $...$ or \(...\)
+//  block: $$...$$ or \[...\]
+const latexRegex = /\$\$([\s\S]+?)\$\$|\\\[([\s\S]+?)\\\]|\\\((.+?)\\\)|\$([^$]+?)\$/g;
 
 // Render LaTeX in a single text node
 function renderLatexInNode(node) {
@@ -28,10 +30,11 @@ function renderLatexInNode(node) {
     if (match.index > lastIndex) {
       frag.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
     }
-    const latex = match[1] || match[2];
+    const latex = match[1] || match[2] || match[3] || match[4];
+    const isBlock = !!(match[1] || match[2]);
     const span = document.createElement('span');
     try {
-      katex.render(latex, span, { throwOnError: false });
+      katex.render(latex, span, { throwOnError: false, displayMode: isBlock });
     } catch (e) {
       span.textContent = match[0];
     }
