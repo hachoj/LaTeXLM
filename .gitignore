@@ -1,0 +1,4 @@
+# Ignore node modules and build artifacts
+notebooklm-latex-extension/node_modules/
+*.zip
+.DS_Store

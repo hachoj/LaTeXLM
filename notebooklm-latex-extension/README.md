@@ -6,9 +6,9 @@ This Chrome extension renders both inline and block LaTeX expressions on [Notebo
 
 - `manifest.json` – Chrome extension manifest
 - `content.js` – Scans the page for LaTeX delimiters (`$...$`, `\(...\)`, `$$...$$`, `\[...\]`) and renders them with KaTeX
-- `katex.min.js`, `katex.min.css`, and `fonts/` – KaTeX runtime files (included)
+- `katex.min.js`, `katex.min.css`, and `fonts/` – KaTeX runtime files
 
-The bundled KaTeX runtime was fetched from npm. If you want to upgrade to a newer version, run:
+The KaTeX files were fetched from npm. To update them run:
 
 ```bash
 npm install katex
@@ -22,6 +22,10 @@ cp -r node_modules/katex/dist/fonts .
 2. Enable *Developer mode*.
 3. Click **Load unpacked** and select this directory.
 4. Visit NotebookLM and math will automatically render.
+
+## Packaging
+
+Zip this folder if you prefer to distribute the extension as a single archive.
 
 ## Development
 

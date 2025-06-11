@@ -1,22 +1,25 @@
 # LaTeXLM
 
-This repository contains a Chrome extension for rendering LaTeX on [NotebookLM](https://notebooklm.google.com/). The extension supports both inline and block expressions.
-Inline math can be written using `$...$` or `\(...\)`, while block math uses `$$...$$` or `\[...\]`.
+This repository provides a small Chrome extension that renders LaTeX on [NotebookLM](https://notebooklm.google.com/). Both inline math (`$...$` or `\(...\)`) and block math (`$$...$$` or `\[...\]`) are supported using the [KaTeX](https://katex.org/) runtime.
 
 ## Quick start
 
-The `notebooklm-latex-extension` directory already includes `katex.min.js`, `katex.min.css`, and the required fonts.
+1. Clone this repository.
+2. Open Chrome and navigate to `chrome://extensions`.
+3. Enable **Developer mode** in the top-right corner.
+4. Click **Load unpacked** and select the `notebooklm-latex-extension` folder.
+5. Visit NotebookLM and your LaTeX expressions will render automatically.
 
-1. Open Chrome and go to `chrome://extensions`.
-2. Enable *Developer mode*.
-3. Click **Load unpacked** and select `notebooklm-latex-extension`.
-4. Navigate to NotebookLM and LaTeX expressions will render automatically.
+The KaTeX runtime (`katex.min.js`, `katex.min.css`, and the `fonts/` directory) is already bundled in the extension directory. If you would like to upgrade to a newer KaTeX release run `npm install` inside `notebooklm-latex-extension` and copy the updated files from `node_modules/katex/dist`.
 
-To update the bundled KaTeX files, optionally run `npm install` inside `notebooklm-latex-extension` and copy over the new `katex.min.js`, `katex.min.css`, and `fonts/` directory.
+## Packaging
 
-The extension relies on the [KaTeX](https://katex.org/) runtime, which is **not included** in the repository. See [`notebooklm-latex-extension`](./notebooklm-latex-extension/) for instructions on downloading the KaTeX files and loading the extension.
+For self-distribution you can zip the `notebooklm-latex-extension` folder and install the package using "Load unpacked" as above or by uploading the zip file to the Chrome extensions page.
+
+## Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
-

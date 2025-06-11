@@ -6,9 +6,16 @@
   "permissions": [],
   "content_scripts": [
     {
-      "matches": ["https://notebooklm.google.com/*"],
-      "js": ["katex.min.js", "content.js"],
-      "css": ["katex.min.css"]
+      "matches": [
+        "https://notebooklm.google.com/*"
+      ],
+      "js": [
+        "katex.min.js",
+        "content.js"
+      ],
+      "css": [
+        "katex.min.css"
+      ]
     }
   ],
   "web_accessible_resources": [
@@ -17,7 +24,10 @@
         "katex.min.css",
         "fonts/*"
       ],
-      "matches": ["https://notebooklm.google.com/*"]
+      "matches": [
+        "https://notebooklm.google.com/*"
+      ]
     }
-  ]
+  ],
+  "homepage_url": "https://github.com/user/LaTeXLM"
 }
