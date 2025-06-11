@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "NotebookLM LaTeX Renderer",
+  "version": "1.0",
+  "description": "Renders inline LaTeX in NotebookLM using KaTeX.",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["https://notebooklm.google.com/*"],
+      "js": ["katex.min.js", "content.js"],
+      "css": ["katex.min.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "katex.min.css",
+        "fonts/*"
+      ],
+      "matches": ["https://notebooklm.google.com/*"]
+    }
+  ]
+}
