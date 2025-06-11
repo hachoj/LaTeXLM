@@ -34,7 +34,8 @@ function renderLatexInNode(node) {
     const isBlock = !!(match[1] || match[2]);
     const span = document.createElement('span');
     try {
-      katex.render(latex, span, { throwOnError: false, displayMode: isBlock });
+      const math = MathJax.tex2chtml(latex, { display: isBlock });
+      span.appendChild(math);
     } catch (e) {
       span.textContent = match[0];
     }
@@ -58,11 +59,13 @@ function renderAllLatex() {
   }
 }
 
-// Initial render
-renderAllLatex();
-
-// Re-render on DOM changes for dynamic content
-const observer = new MutationObserver(() => {
+MathJax.startup.promise.then(() => {
+  // Initial render
   renderAllLatex();
+
+  // Re-render on DOM changes for dynamic content
+  const observer = new MutationObserver(() => {
+    renderAllLatex();
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
 });
-observer.observe(document.body, { childList: true, subtree: true });

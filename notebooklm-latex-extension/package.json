@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "katex": "^0.16.22"
+    "mathjax": "^3.2.2"
   }
 }
