@@ -22,6 +22,15 @@ cp node_modules/mathjax-full/es5/tex-chtml.js mathjax.js
 3. Click **Load unpacked** and select this directory.
 4. Visit NotebookLM and math will automatically render.
 
+***IMPORTANT***
+
+
+Add 
+```
+When making math expressions, use MathJax. In MathJax, for all uses of "_", put spaces on both ends, so you have “ _ ". For example, to say $x _ {r}$, instead say $x _ {r}$. For block math, delimiter, newline, math, newline, delimiter.
+```
+to your custom prompt for this to work.
+
 ## Packaging
 
 Zip this folder if you prefer to distribute the extension as a single archive.
