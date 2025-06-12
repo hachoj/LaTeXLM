@@ -12,7 +12,7 @@ This repository provides a small Chrome extension that renders LaTeX on [Noteboo
 
 The MathJax runtime (`mathjax.js`) is already bundled in the extension directory. If you would like to upgrade to a newer MathJax release run `npm install` inside `notebooklm-latex-extension` and copy the updated file from `node_modules/mathjax-full/es5`.
 
-***IMPORTANT***
+# ***IMPORTANT***
 
 
 Add 
