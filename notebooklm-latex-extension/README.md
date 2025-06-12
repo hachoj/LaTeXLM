@@ -1,6 +1,6 @@
 # NotebookLM LaTeX Renderer
 
-This Chrome extension renders both inline and block LaTeX expressions on [NotebookLM](https://notebooklm.google.com/) using MathJax.
+This Chrome extension renders both inline and block LaTeX expressions on [NotebookLM](https://notebooklm.google.com/) using MathJax. Block formulas may span multiple lines.
 
 ## Files
 

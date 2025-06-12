@@ -1,6 +1,6 @@
 # LaTeXLM
 
-This repository provides a small Chrome extension that renders LaTeX on [NotebookLM](https://notebooklm.google.com/). Both inline math (`$...$` or `\(...\)`) and block math (`$$...$$` or `\[...\]`) are rendered with the bundled [MathJax](https://www.mathjax.org/) runtime.
+This repository provides a small Chrome extension that renders LaTeX on [NotebookLM](https://notebooklm.google.com/). Both inline math (`$...$` or `\(...\)`) and block math (`$$...$$` or `\[...\]`) are rendered with the bundled [MathJax](https://www.mathjax.org/) runtime. Block expressions can span multiple lines separated by newlines.
 
 ## Quick start
 
