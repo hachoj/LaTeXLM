@@ -24,13 +24,6 @@ cp -r node_modules/katex/dist/fonts .
 3. Click **Load unpacked** and select this directory.
 4. Visit NotebookLM and math will automatically render.
 
-### Tips
-
-* For best results place block math (e.g. `$$...$$`) on its own line so the
-  entire expression falls within a single text node. Inline math works when
-  directly adjacent to other characters, but you may see fewer rendering issues
-  if there is a small amount of surrounding whitespace.
-
 ## Packaging
 
 Zip this folder if you prefer to distribute the extension as a single archive.
