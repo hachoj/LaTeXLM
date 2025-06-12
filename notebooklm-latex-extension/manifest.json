@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "NotebookLM LaTeX Renderer",
   "version": "1.0",
-  "description": "Renders inline LaTeX in NotebookLM using MathJax.",
+  "description": "Renders inline LaTeX in NotebookLM using KaTeX.",
   "permissions": [],
   "content_scripts": [
     {
@@ -10,16 +10,19 @@
         "https://notebooklm.google.com/*"
       ],
       "js": [
-        "tex-mml-chtml.js",
+        "katex.min.js",
         "content.js"
+      ],
+      "css": [
+        "katex.min.css"
       ]
     }
   ],
   "web_accessible_resources": [
     {
       "resources": [
-        "fonts/*",
-        "fonts/woff-v2/*"
+        "katex.min.css",
+        "fonts/*"
       ],
       "matches": [
         "https://notebooklm.google.com/*"

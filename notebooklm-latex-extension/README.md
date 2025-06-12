@@ -8,7 +8,7 @@ This Chrome extension renders both inline and block LaTeX expressions on [Notebo
 - `content.js` – Scans the page for LaTeX delimiters (`$...$`, `\(...\)`, `$$...$$`, `\[...\]`) and renders them with MathJax
 - `tex-mml-chtml.js` and `fonts/` – MathJax runtime files
 
-The MathJax files were fetched from npm. To update them run:
+The KaTeX files were fetched from npm. To update them run:
 
 ```bash
 npm install mathjax
