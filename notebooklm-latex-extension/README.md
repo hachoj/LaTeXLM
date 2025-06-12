@@ -12,7 +12,8 @@ The KaTeX files were fetched from npm. To update them run:
 
 ```bash
 npm install katex
-cp node_modules/katex/dist/katex.min.js node_modules/katex/dist/katex.min.css -t .
+cp node_modules/katex/dist/katex.min.js .
+cp node_modules/katex/dist/katex.min.css .
 cp -r node_modules/katex/dist/fonts .
 ```
 
@@ -22,6 +23,13 @@ cp -r node_modules/katex/dist/fonts .
 2. Enable *Developer mode*.
 3. Click **Load unpacked** and select this directory.
 4. Visit NotebookLM and math will automatically render.
+
+### Tips
+
+* For best results place block math (e.g. `$$...$$`) on its own line so the
+  entire expression falls within a single text node. Inline math works when
+  directly adjacent to other characters, but you may see fewer rendering issues
+  if there is a small amount of surrounding whitespace.
 
 ## Packaging
 

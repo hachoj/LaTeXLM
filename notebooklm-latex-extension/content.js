@@ -14,7 +14,9 @@ function getTextNodes(node) {
 // Regex for inline and block LaTeX:
 //  inline: $...$ or \(...\)
 //  block: $$...$$ or \[...\]
-const latexRegex = /\$\$([\s\S]+?)\$\$|\\\[([\s\S]+?)\\\]|\\\((.+?)\\\)|\$([^$]+?)\$/g;
+// Escaped delimiters like `\$` should not be treated as math. We use
+// negative lookbehind to ensure `$` tokens are not preceded by a backslash.
+const latexRegex = /(?<!\\)\$\$([\s\S]+?)(?<!\\)\$\$|\\\[([\s\S]+?)\\\]|\\\((.+?)\\\)|(?<!\\)\$([^$]+?)(?<!\\)\$/g;
 
 // Render LaTeX in a single text node
 function renderLatexInNode(node) {
