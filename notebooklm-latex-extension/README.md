@@ -1,19 +1,19 @@
 # NotebookLM LaTeX Renderer
 
-This Chrome extension renders both inline and block LaTeX expressions on [NotebookLM](https://notebooklm.google.com/) using MathJax.
+This Chrome extension renders both inline and block LaTeX expressions on [NotebookLM](https://notebooklm.google.com/) using KaTeX.
 
 ## Files
 
 - `manifest.json` – Chrome extension manifest
-- `content.js` – Scans the page for LaTeX delimiters (`$...$`, `\(...\)`, `$$...$$`, `\[...\]`) and renders them with MathJax
-- `tex-mml-chtml.js` and `fonts/` – MathJax runtime files
+- `content.js` – Scans the page for LaTeX delimiters (`$...$`, `\(...\)`, `$$...$$`, `\[...\]`) and renders them with KaTeX
+- `katex.min.js`, `katex.min.css`, and `fonts/` – KaTeX runtime files
 
 The KaTeX files were fetched from npm. To update them run:
 
 ```bash
-npm install mathjax
-cp node_modules/mathjax/es5/tex-mml-chtml.js .
-cp -r node_modules/mathjax/es5/output/chtml/fonts .
+npm install katex
+cp node_modules/katex/dist/katex.min.js node_modules/katex/dist/katex.min.css -t .
+cp -r node_modules/katex/dist/fonts .
 ```
 
 ## Quick start
