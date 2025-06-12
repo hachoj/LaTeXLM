@@ -14,7 +14,12 @@ function getTextNodes(node) {
 // Regex for inline and block LaTeX:
 //  inline: $...$ or \(...\)
 //  block: $$...$$ or \[...\]
-const latexRegex = /\$\$([\s\S]+?)\$\$|\\\[([\s\S]+?)\\\]|\\\((.+?)\\\)|\$([^$]+?)\$/g;
+// Escaped delimiters like `\$` should not be treated as math. We use
+// negative lookbehind so `$` tokens are ignored when preceded by a backslash.
+// Closing delimiters must be followed by whitespace, punctuation or the end of
+// the node so that expressions like `$x$y` are not parsed incorrectly.
+const latexRegex =
+  /(?<!\\)\$\$([\s\S]+?)(?<!\\)\$\$(?=\W|$)|\\\[([\s\S]+?)\\\]|\\\((.+?)\\\)|(?<!\\)\$([^$]+?)(?<!\\)\$(?=\W|$)/g;
 
 // Render LaTeX in a single text node
 function renderLatexInNode(node) {
@@ -30,7 +35,7 @@ function renderLatexInNode(node) {
     if (match.index > lastIndex) {
       frag.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
     }
-    const latex = match[1] || match[2] || match[3] || match[4];
+    const latex = (match[1] || match[2] || match[3] || match[4]).trim();
     const isBlock = !!(match[1] || match[2]);
     const span = document.createElement('span');
     try {
