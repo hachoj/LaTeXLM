@@ -1,6 +1,6 @@
 # LaTeXLM
 
-This repository provides a small Chrome extension that renders LaTeX on [NotebookLM](https://notebooklm.google.com/). Both inline math (`$...$` or `\(...\)`) and block math (`$$...$$` or `\[...\]`) are supported using the [KaTeX](https://katex.org/) runtime.
+This repository provides a small Chrome extension that renders LaTeX on [NotebookLM](https://notebooklm.google.com/). Both inline math (`$...$` or `\(...\)`) and block math (`$$...$$` or `\[...\]`) are rendered with the bundled [MathJax](https://www.mathjax.org/) runtime.
 
 ## Quick start
 
@@ -10,7 +10,7 @@ This repository provides a small Chrome extension that renders LaTeX on [Noteboo
 4. Click **Load unpacked** and select the `notebooklm-latex-extension` folder.
 5. Visit NotebookLM and your LaTeX expressions will render automatically.
 
-The KaTeX runtime (`katex.min.js`, `katex.min.css`, and the `fonts/` directory) is already bundled in the extension directory. If you would like to upgrade to a newer KaTeX release run `npm install` inside `notebooklm-latex-extension` and copy the updated files from `node_modules/katex/dist`.
+The MathJax runtime (`mathjax.js`) is already bundled in the extension directory. If you would like to upgrade to a newer MathJax release run `npm install` inside `notebooklm-latex-extension` and copy the updated file from `node_modules/mathjax-full/es5`.
 
 ## Packaging
 
