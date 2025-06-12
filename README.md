@@ -12,6 +12,16 @@ This repository provides a small Chrome extension that renders LaTeX on [Noteboo
 
 The MathJax runtime (`mathjax.js`) is already bundled in the extension directory. If you would like to upgrade to a newer MathJax release run `npm install` inside `notebooklm-latex-extension` and copy the updated file from `node_modules/mathjax-full/es5`.
 
+***IMPORTANT***
+
+
+Add 
+```
+When making math expressions, use MathJax. In MathJax, for all uses of "_", put spaces on both ends, so you have “ _ ". For example, to say $x _ {r}$, instead say $x _ {r}$. For block math, delimiter, newline, math, newline, delimiter.
+```
+to your custom prompt for this to work.
+
+
 ## Packaging
 
 For self-distribution you can zip the `notebooklm-latex-extension` folder and install the package using "Load unpacked" as above or by uploading the zip file to the Chrome extensions page.
